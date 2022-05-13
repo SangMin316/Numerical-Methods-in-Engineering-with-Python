@@ -1,13 +1,10 @@
 import numpy as np
 from numpy import random
 
+# basic 
 A = np.random.rand(3,4) #3행 4열 행렬 random(0~1값)하게 생성
-print(A)
 a = A[0:3,0:3] # 0~3행 0~3열 요소를 받겠다 끝점 미포함
-print(a)
 b = A[:,3] #4열의 전체 요소를 받겠다.
-print(b)
-
 print(A.shape) # A의 모양 몇행 몇열인지 출력값: (3,4)
 len(a) #첫번째 요소의 길이
 
@@ -40,6 +37,8 @@ bb = b.copy()
 xx = b.copy()
 x = np.zeros(len(b)) # x.shape(1,3)
 n = len(a)
+
+
 #Elimination phase
 for k in range(0,n-1):  #pivot rows, in range 마지막 은 포함 x, computer는 0부터 카운터
     for i in range(k+1,n):
@@ -63,7 +62,6 @@ print('x',x)
 
 
 #함수로 만드는 것 
-
 def gauss(a,b):
     for k in range(0,n-1):  #pivot rows, in range 마지막 은 포함 x, computer는 0부터 카운터
         for i in range(k+1,n):
